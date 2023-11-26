@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timer Example</title>
+</head>
+<body>
+
+<div id="timer">10</div>
+
+<script>
+// Get the timer element
+const timerElement = document.getElementById("timer");
+
+// Set the initial time
+let timeRemaining = 10;
+
+// Function to update the timer display
+function updateTimer() {
+    timerElement.innerText = timeRemaining;
+
+    if (timeRemaining === 0) {
+        clearInterval(timerInterval);
+        timerElement.innerText = "Time's up!";
+    } else {
+        timeRemaining--;
+    }
+}
+
+// Call the updateTimer function every second
+const timerInterval = setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
